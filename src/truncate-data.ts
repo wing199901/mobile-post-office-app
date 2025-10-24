@@ -93,21 +93,10 @@ async function truncateData(): Promise<void> {
 
     // Ask for confirmation
     const confirmed = await askConfirmation(
-      'Are you sure you want to proceed? (yes/no): ',
+      'Type "yes" to DELETE ALL RECORDS: ',
     );
 
     if (!confirmed) {
-      console.log('\n❌ Truncation cancelled by user.\n');
-      await app.close();
-      return;
-    }
-
-    // Double confirmation for extra safety
-    const doubleConfirmed = await askConfirmation(
-      '\n⚠️  Final confirmation - Type "yes" to DELETE ALL RECORDS: ',
-    );
-
-    if (!doubleConfirmed) {
       console.log('\n❌ Truncation cancelled by user.\n');
       await app.close();
       return;
