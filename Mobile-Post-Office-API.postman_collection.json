@@ -1,0 +1,537 @@
+{
+  "info": {
+    "name": "Mobile Post Office API",
+    "description": "Complete API collection for Mobile Post Office backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "recordId",
+      "value": "1",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "List Mobile Posts",
+      "item": [
+        {
+          "name": "List All (English)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?lang=en&page=1&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "lang", "value": "en" },
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "10" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "List All (Traditional Chinese)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?lang=tc&page=1&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "lang", "value": "tc" },
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "10" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "List All (Simplified Chinese)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?lang=sc&page=1&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "lang", "value": "sc" },
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "10" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "List All Languages (lang=all)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?lang=all&page=1&limit=5",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "lang", "value": "all" },
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "5" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Search & Filter",
+      "item": [
+        {
+          "name": "Search - All Languages",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?search=Gold&lang=en",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "search", "value": "Gold" },
+                { "key": "lang", "value": "en" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search - Traditional Chinese",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?search=元朗&lang=tc",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "search", "value": "元朗" },
+                { "key": "lang", "value": "tc" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Filter by District (English)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?district=Yuen Long&lang=en",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "district", "value": "Yuen Long" },
+                { "key": "lang", "value": "en" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Filter by District (Chinese)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?district=元朗區&lang=tc",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "district", "value": "元朗區" },
+                { "key": "lang", "value": "tc" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Filter by Day of Week",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?dayOfWeek=1&lang=en",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "dayOfWeek", "value": "1" },
+                { "key": "lang", "value": "en" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Filter by Open Time",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?openAt=09:30&lang=en",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "openAt", "value": "09:30" },
+                { "key": "lang", "value": "en" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Multiple Filters Combined",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?district=Yuen Long&dayOfWeek=1&openAt=09:00&lang=en",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "district", "value": "Yuen Long" },
+                { "key": "dayOfWeek", "value": "1" },
+                { "key": "openAt", "value": "09:00" },
+                { "key": "lang", "value": "en" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sorting & Pagination",
+      "item": [
+        {
+          "name": "Sort by Opening Hour",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?sortBy=openHour&sortDir=asc&lang=en",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "sortBy", "value": "openHour" },
+                { "key": "sortDir", "value": "asc" },
+                { "key": "lang", "value": "en" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Sort by District (Chinese)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?sortBy=district&sortDir=asc&lang=tc",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "sortBy", "value": "district" },
+                { "key": "sortDir", "value": "asc" },
+                { "key": "lang", "value": "tc" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Pagination - Page 2",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?page=2&limit=20&lang=en",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [
+                { "key": "page", "value": "2" },
+                { "key": "limit", "value": "20" },
+                { "key": "lang", "value": "en" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Get Single Record",
+      "item": [
+        {
+          "name": "Get by ID (English)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts/{{recordId}}?lang=en",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts", "{{recordId}}"],
+              "query": [{ "key": "lang", "value": "en" }]
+            }
+          }
+        },
+        {
+          "name": "Get by ID (All Languages)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts/{{recordId}}?lang=all",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts", "{{recordId}}"],
+              "query": [{ "key": "lang", "value": "all" }]
+            }
+          }
+        },
+        {
+          "name": "Get Non-existent ID (Error 0201)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts/999999?lang=en",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts", "999999"],
+              "query": [{ "key": "lang", "value": "en" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Create Record",
+      "item": [
+        {
+          "name": "Create Valid Record",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mobileCode\": \"TEST\",\n  \"seq\": 999,\n  \"nameEN\": \"Test Mobile Post Office\",\n  \"nameTC\": \"測試流動郵局\",\n  \"nameSC\": \"测试流动邮局\",\n  \"districtEN\": \"Test District\",\n  \"districtTC\": \"測試區\",\n  \"districtSC\": \"测试区\",\n  \"locationEN\": \"Test Location\",\n  \"locationTC\": \"測試地點\",\n  \"locationSC\": \"测试地点\",\n  \"addressEN\": \"123 Test Street\",\n  \"addressTC\": \"測試街123號\",\n  \"addressSC\": \"测试街123号\",\n  \"openHour\": \"10:00\",\n  \"closeHour\": \"11:00\",\n  \"dayOfWeekCode\": 1,\n  \"latitude\": 22.28,\n  \"longitude\": 114.17\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"]
+            }
+          }
+        },
+        {
+          "name": "Create - Missing Required Fields (Error 0101)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mobileCode\": \"TEST\",\n  \"seq\": 100\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"]
+            }
+          }
+        },
+        {
+          "name": "Create - Invalid Time Format (Error 0104)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nameEN\": \"Test\",\n  \"districtEN\": \"Test\",\n  \"openHour\": \"25:00\",\n  \"closeHour\": \"10:00\",\n  \"dayOfWeekCode\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"]
+            }
+          }
+        },
+        {
+          "name": "Create - Invalid Coordinates (Error 0106)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nameEN\": \"Test\",\n  \"districtEN\": \"Test\",\n  \"latitude\": 999,\n  \"longitude\": 999\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Update Record",
+      "item": [
+        {
+          "name": "Update - Partial Fields",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"openHour\": \"08:30\",\n  \"closeHour\": \"09:30\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts/{{recordId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts", "{{recordId}}"]
+            }
+          }
+        },
+        {
+          "name": "Update - Language Field Only",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nameSC\": \"更新的简体名称\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts/{{recordId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts", "{{recordId}}"]
+            }
+          }
+        },
+        {
+          "name": "Update - Empty Body (Error 0102)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts/{{recordId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts", "{{recordId}}"]
+            }
+          }
+        },
+        {
+          "name": "Update - Non-existent ID (Error 0201)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"openHour\": \"10:00\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts/999999",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts", "999999"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Delete Record",
+      "item": [
+        {
+          "name": "Delete Existing Record",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts/{{recordId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts", "{{recordId}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Non-existent ID (Error 0201)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts/999999",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts", "999999"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Error Cases",
+      "item": [
+        {
+          "name": "Invalid Lang Parameter (Error 0105)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?lang=invalid",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [{ "key": "lang", "value": "invalid" }]
+            }
+          }
+        },
+        {
+          "name": "Invalid Page Parameter (Error 0103)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?page=0",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [{ "key": "page", "value": "0" }]
+            }
+          }
+        },
+        {
+          "name": "Limit Exceeded (Error 0103)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?limit=999",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [{ "key": "limit", "value": "999" }]
+            }
+          }
+        },
+        {
+          "name": "Invalid Time Format in Filter (Error 0104)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/mobileposts?openAt=25:00",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "mobileposts"],
+              "query": [{ "key": "openAt", "value": "25:00" }]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
